@@ -1,23 +1,23 @@
 <?php
     session_start();
 ?>
-    <div class="wrapper-header">
-        <a href="./index.php" class="branch">Trang Chính</a>
-        <ul>
-            <li><a href="./studentList.php">Danh Sách Sinh Viên</a></li>
-            <li><a href="./classList.php">Danh Sách Lớp</a></li>
-            <li><a href="./about.php">About</a></li>
-            
+    <header>
+        <a href="./index.php" class='header-home'>Trang Chính</a>
+        <nav>
+            <ul>
+                <li><a href="./studentList.php">Danh Sách Sinh Viên</a></li>
+                <li><a href="./classList.php">Danh Sách Lớp</a></li>
+                <li><a href="./about.php">About</a></li>
+            </ul> 
             <?php
                 if(isset($_SESSION['username'])){
-                    echo "<li class='login-logout'><a href='./logout.php'>Thoát</a></li>";
+                    echo "<a href='./logout.php' class='login-logout'>Thoát</a>";
                 }
                 else{
-                    echo "<li class='login-logout'><a href='./login.php'>Đăng Nhập</a></li>";
+                    echo "<a href='./login.php' class='login-logout'>Đăng Nhập</a>";
                 }
             ?>
-            
-        </ul>
-    </div>
-    <br>
+        </nav>    
+    </header>
+        
 
