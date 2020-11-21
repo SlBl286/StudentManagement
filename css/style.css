@@ -90,7 +90,7 @@ header nav ul li a{
 }
 
 header .login-logout{
-    display: none;
+    display: block;
 }
 /*index*/
 .wrapper-index h3{
