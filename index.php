@@ -15,15 +15,23 @@
             <?php
                 if(isset($_SESSION['username'])){
             ?>
-            <h3>Website Quản Lý Sinh Viên</h3>
-            <table>
-                <tr>
-                    <td>Số sinh viên</td>
-                    <td>Số lớp</td>
-                    <td>Số khoa</td>
-                    
-                </tr> 
-            </table>
+            <main>
+                <h3>Thống kê</h3>
+                <div class="outter-box-index">
+                    <div class="inner-box1">
+                        <p>Số Sinh Viên</p>
+                    </div>
+                    <div class="inner-box2">
+                        <p>Số lớp</p>
+                    </div>
+                    <div class="inner-box3">
+                        <p>Số ngành</p>
+                    </div>
+                    <div class="inner-box4">
+                    <p>box1</p>
+                    </div>
+                </div>
+            </main>
             <?php
                 }else{
             ?>

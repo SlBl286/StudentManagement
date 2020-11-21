@@ -92,3 +92,65 @@ header nav ul li a{
 header .login-logout{
     display: none;
 }
+/*index*/
+.wrapper-index h3{
+    font-size: 22px;
+    font-weight: 500;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    line-height: 30px;
+}
+.wrapper-index .outter-box-index{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: calc(100vh - 30px);
+}
+.wrapper-index .outter-box-index .inner-box1{
+    width: 20vw;
+    height: 15vh;
+    background-color: #5632FA;
+}
+.wrapper-index .outter-box-index .inner-box2{
+    width: 20vw;
+    height: 15vh;
+    background-color: #00FA8E;
+}
+.wrapper-index .outter-box-index .inner-box3{
+    width: 20vw;
+    height: 15vh;
+    background-color: #FA2500;
+}
+.wrapper-index .outter-box-index .inner-box4{
+    width: 20vw;
+    height: 15vh;
+    background-color: #FADF0C;
+
+}
+/*studentList*/
+
+.search-student{
+    
+}
+
+/*footer*/
+
+footer{
+    background-color: #111;
+
+}
+footer p{
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    line-height: 30x;
+    color: #f3f3f3;
+}

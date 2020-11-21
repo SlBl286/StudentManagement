@@ -16,7 +16,22 @@
                 // đã đăng nhập
                 if(isset($_SESSION['username'])){
             ?>
-            <p>Danh Sách Sinh Viên</p>
+             <section class="search-student">
+                <div>
+                    <form action="" method="post">
+                        <input type="search" name="studentinfor" placeholder="Tìm Kiếm ...">
+                        <button type="submit">Tìm Kiếm</button>
+                    </form>
+                </div>
+            </section>
+            <section class="student-list">
+                <h3>Danh Sách Sinh Viên</h3>
+                <div>
+                    <table>
+                        
+                    </table>
+                </div>
+            </section>
             <?php
                 }
                 //chưa đăng nhập
