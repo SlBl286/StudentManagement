@@ -136,7 +136,9 @@ header .login-logout{
 .search-student{
     
 }
-
+.student-list table, th, td {
+    border: 1px solid black;
+  }
 /*footer*/
 
 footer{

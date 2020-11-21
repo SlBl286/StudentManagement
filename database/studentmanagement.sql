@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 20, 2020 lúc 05:38 PM
--- Phiên bản máy phục vụ: 10.4.14-MariaDB
--- Phiên bản PHP: 7.4.11
+-- Host: 127.0.0.1
+-- Generation Time: Nov 21, 2020 at 09:58 AM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `studentmanagement`
+-- Database: `studentmanagement`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `classes`
+-- Table structure for table `classes`
 --
 
 CREATE TABLE `classes` (
@@ -37,7 +37,7 @@ CREATE TABLE `classes` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `majors`
+-- Table structure for table `majors`
 --
 
 CREATE TABLE `majors` (
@@ -50,7 +50,7 @@ CREATE TABLE `majors` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `students`
+-- Table structure for table `students`
 --
 
 CREATE TABLE `students` (
@@ -58,6 +58,7 @@ CREATE TABLE `students` (
   `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `birthday` date NOT NULL,
+  `sex` tinyint(1) NOT NULL,
   `phone` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `address` int(11) NOT NULL,
@@ -68,7 +69,7 @@ CREATE TABLE `students` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `transcripts`
+-- Table structure for table `transcripts`
 --
 
 CREATE TABLE `transcripts` (
@@ -78,7 +79,7 @@ CREATE TABLE `transcripts` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -88,76 +89,76 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `user_name`, `pwd`) VALUES
 (1, 'admin', '$2y$10$yiZSbu0a6yUhq4RQ8ZznI.AU4Ql82TPyZb4.kvm5hi9KwlPrSU83a');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `classes`
+-- Indexes for table `classes`
 --
 ALTER TABLE `classes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `majors`
+-- Indexes for table `majors`
 --
 ALTER TABLE `majors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `students`
+-- Indexes for table `students`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `transcripts`
+-- Indexes for table `transcripts`
 --
 ALTER TABLE `transcripts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `classes`
+-- AUTO_INCREMENT for table `classes`
 --
 ALTER TABLE `classes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `majors`
+-- AUTO_INCREMENT for table `majors`
 --
 ALTER TABLE `majors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `students`
+-- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `transcripts`
+-- AUTO_INCREMENT for table `transcripts`
 --
 ALTER TABLE `transcripts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

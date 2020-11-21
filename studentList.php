@@ -27,8 +27,16 @@
             <section class="student-list">
                 <h3>Danh Sách Sinh Viên</h3>
                 <div>
-                    <table>
-                        
+                    <table class="tudent-table">
+                         <tr>
+                             <th>ID</th>
+                             <th>Họ</th>
+                             <th>Tên</th>
+                             <th>Ngày Sinh</th>
+                             <th>Giới tính</th>
+                             <th></th>
+                             <th></th>
+                    </tr>   
                     </table>
                 </div>
             </section>
