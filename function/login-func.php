@@ -1,6 +1,6 @@
 <?php
         include_once "../database/database.php";
-
+        
     
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
     }
     include_once "./function.php";
     $userExit = userExit($conn,$username);
-    echo $userExit['user_name'];
     if($userExit == false){
         header("location: ../login.php?error=user");
         exit();

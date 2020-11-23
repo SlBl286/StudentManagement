@@ -19,17 +19,8 @@
                 // đã đăng nhập
                 if(isset($_SESSION['username'])){      
             ?>
-             <section class="search-class">
-                <div>
-                    <form action="./class-search.php" method="post">
-                        <input type="search" name="classinfor" placeholder="Tìm Kiếm Lớp ...">
-                        <button type="submit" name="submit">Tìm Kiếm</button>
-                    </form>
-                </div>
-                <button class="addclass-btn" ><a href="./addClass.php">Thêm Lớp</a></button>
-            </section>
             <section class="class-list">
-                <h2>Danh Sách Lớp</h2>
+                <h2>Danh Sách Tìm Kiếm</h2>
                 <div>
                     <table class="class-table">
                          <tr>
@@ -41,21 +32,21 @@
                         </tr>
                         <?php
                             include_once "./database/database.php";
-                            $sql = "SELECT classes.id,classes.student_num as studentnum,classes.name as class_name,majors.name as major_name FROM classes INNER JOIN majors ON classes.majors_id = majors.id";
-                            $stmt = mysqli_stmt_init($conn);
-                            if(!mysqli_stmt_prepare($stmt,$sql)){
-                                echo "SQL statement failed";
-                            }
-                            else{
+                            if(isset($_POST['submit'])){
+                                $search = $_POST['classinfor'];
+                                $sql = "SELECT * FROM classes WHERE name LIKE '%${search}%' OR majors_id LIKE '%${search}%';";
+                                $stmt = mysqli_stmt_init($conn);
+                                if(!mysqli_stmt_prepare($stmt,$sql)){
+                                    echo "SQL ERROR";
+                                }
                                 mysqli_stmt_execute($stmt);
                                 $result = mysqli_stmt_get_result($stmt);
                                 foreach ($result as $row) {
                         ?>
                         <tr>
                              <td><?php echo $row['id'] ?></td>
-                             <td><?php echo $row['class_name'] ?></td>
-                             <td><?php echo $row['major_name'] ?></td>
-                             <td><?php echo $row['studentnum'] ?></td>
+                             <td><?php echo $row['name'] ?></td>
+                             <td><?php echo $row['majors_id'] ?></td>
                              <td></td>
                              <form action="./del-edit-class.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">

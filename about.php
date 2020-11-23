@@ -6,18 +6,19 @@
     <title>Quản Lý Sinh Viên TH23.21</title>
     <link href="./img/student.ico" rel="icon" type="image/ico" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
 </head>
 <body>
     <?php
+        $active = array("","","","","");
+        $active[4] = "active";
         include_once "./main/header.php";
     ?>
     
-    <div class="login-form">
-        <p>Danh Sách Thành Viên NHóm 3 - TH23.21</p>
-        <ul>
-            <li>Đoàn Duy Quý</li>
-            <li>Nguyễn Bá Thức</li>
-        </ul>
+    <div class="wrapper-about">
+        <h1>Danh Sách Thành Viên</h1>
+            <p>Đoàn Duy Quý</p>
+            <p>Nguyễn Bá Thức</p>
     </div>
 
     <?php

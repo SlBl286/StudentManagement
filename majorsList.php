@@ -10,38 +10,37 @@
 <body>
     <?php
         $active = array("","","","","","");
-        $active[2] = "active";
+        $active[3] = "active";
         include_once "./main/header.php";
     ?>
     <main>
-        <div class="wrapper-classlist">
+        <div class="wrapper-majorslist">
             <?php
                 // đã đăng nhập
                 if(isset($_SESSION['username'])){      
             ?>
-             <section class="search-class">
+             <section class="search-majors">
                 <div>
-                    <form action="./class-search.php" method="post">
-                        <input type="search" name="classinfor" placeholder="Tìm Kiếm Lớp ...">
+                    <form action="majors-search.php" method="post">
+                        <input type="search" name="majorsinfor" placeholder="Tìm Kiếm Khoa ...">
                         <button type="submit" name="submit">Tìm Kiếm</button>
                     </form>
                 </div>
-                <button class="addclass-btn" ><a href="./addClass.php">Thêm Lớp</a></button>
+                <button class="addmajors-btn" ><a href="./addMajors.php">Thêm Khoa</a></button>
             </section>
-            <section class="class-list">
-                <h2>Danh Sách Lớp</h2>
+            <section class="majors-list">
+                <h2>Danh Sách Khoa</h2>
                 <div>
-                    <table class="class-table">
+                    <table class="majors-table">
                          <tr>
                              <th>ID</th>
-                             <th>Lớp</th>
-                             <th>Thuộc Khoa</th>
-                             <th>Số Sinh Viên</th>
+                             <th>Khoa</th>
+                             <th>Số Lớp</th>
                              <th></th>
                         </tr>
                         <?php
                             include_once "./database/database.php";
-                            $sql = "SELECT classes.id,classes.student_num as studentnum,classes.name as class_name,majors.name as major_name FROM classes INNER JOIN majors ON classes.majors_id = majors.id";
+                            $sql = "SELECT id, name,student_num,class_num FROM majors";
                             $stmt = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt,$sql)){
                                 echo "SQL statement failed";
@@ -53,11 +52,9 @@
                         ?>
                         <tr>
                              <td><?php echo $row['id'] ?></td>
-                             <td><?php echo $row['class_name'] ?></td>
-                             <td><?php echo $row['major_name'] ?></td>
-                             <td><?php echo $row['studentnum'] ?></td>
-                             <td></td>
-                             <form action="./del-edit-class.php" method="post">
+                             <td><?php echo $row['name'] ?></td>
+                             <td><?php echo $row['class_num'] ?></td>
+                             <form action="./del-edit-majors.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                                 <td><button type="submit" name='edit-btn' class="ed-btn edit-btn">Sửa</button><button type="submit" name='del-btn' class="ed-btn del-btn">Xóa</button></td>
                              </form>

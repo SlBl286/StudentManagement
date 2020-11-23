@@ -10,6 +10,6 @@ $conn = mysqli_connect(HOST,USER,PASS,DBNAME);
 if (!$conn) {
     die("Connection Error: " . mysqli_connect_error());
 }
-
+mysqli_set_charset($conn,"utf8");
 $sql = "";
 
